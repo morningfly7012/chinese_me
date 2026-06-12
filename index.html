@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國寫進步計畫｜我的作文分析儀表板</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>國寫進步計畫</h1>
+  <p>知性 × 情意｜歷次作文成績與弱點分析儀表板</p>
+</header>
+
+<nav>
+  <a href="#overview">成績總覽</a>
+  <a href="#radar">能力分析</a>
+  <a href="#issues">常犯問題</a>
+  <a href="#essays">逐篇詳解</a>
+  <a href="#plan">行動計畫</a>
+</nav>
+
+<main>
+
+<section id="overview">
+  <h2>成績總覽<span class="en">Overview</span></h2>
+  <div class="stats" id="statCards"></div>
+  <div class="chart-grid two" style="margin-top:20px">
+    <div class="card">
+      <div class="chart-box"><canvas id="barChart"></canvas></div>
+      <p class="chart-note">每篇得分（滿分 25）。<span style="color:var(--accent2)">藍＝知性題</span>、<span style="color:var(--accent)">紅＝情意題</span>。</p>
+    </div>
+    <div class="card">
+      <div class="chart-box"><canvas id="lineChart"></canvas></div>
+      <p class="chart-note">依練習順序的得分走勢，分知性／情意兩條線。</p>
+    </div>
+  </div>
+</section>
+
+<section id="radar">
+  <h2>能力面向分析<span class="en">Skill Radar</span></h2>
+  <div class="chart-grid two">
+    <div class="card">
+      <div class="chart-box"><canvas id="radarChart"></canvas></div>
+      <p class="chart-note">五大面向（1–5 分）：依老師批改與文本分析評估，比較知性與情意的平均表現。</p>
+    </div>
+    <div class="card" id="radarSummary"></div>
+  </div>
+</section>
+
+<section id="issues">
+  <h2>常犯問題分析<span class="en">Recurring Issues</span></h2>
+  <div id="issueList"></div>
+</section>
+
+<section id="essays">
+  <h2>逐篇詳解<span class="en">Essay Reviews</span></h2>
+  <div id="essayList"></div>
+</section>
+
+<section id="plan">
+  <h2>進步行動計畫<span class="en">Action Plan</span></h2>
+  <div class="card">
+    <ol class="plan" id="planList"></ol>
+  </div>
+</section>
+
+</main>
+
+<div id="lightbox"><img src="" alt="原稿放大"></div>
+
+<footer>為了讓國文作文進步而生 ✍️</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
